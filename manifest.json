@@ -1,0 +1,34 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/eui/eui.js",
+		"libs/modules/assetsmanager/assetsmanager.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/promise/promise.js"
+	],
+	"game": [
+		"bin-debug/ecs/Component.js",
+		"bin-debug/ecs/components/IUpdatable.js",
+		"bin-debug/ecs/Camera.js",
+		"bin-debug/Platform.js",
+		"bin-debug/ThemeAdapter.js",
+		"bin-debug/core/Assert.js",
+		"bin-debug/core/Mathf.js",
+		"bin-debug/core/Matrix2D.js",
+		"bin-debug/core/Vector2.js",
+		"bin-debug/core/Vector2Ext.js",
+		"bin-debug/debug/Debug.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/AssetAdapter.js",
+		"bin-debug/ecs/Core.js",
+		"bin-debug/ecs/Entity.js",
+		"bin-debug/ecs/Scene.js",
+		"bin-debug/ecs/Transform.js",
+		"bin-debug/Main.js",
+		"bin-debug/ecs/components/renderables/IRenderable.js",
+		"bin-debug/ecs/components/renderables/RenderableComponent.js",
+		"bin-debug/ecs/internalUtils/ComponentList.js",
+		"bin-debug/ecs/internalUtils/RenderableComponentList.js"
+	]
+}
