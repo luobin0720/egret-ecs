@@ -32,6 +32,7 @@ class Entity{
     public readonly components: ComponentList;
 
     private _enabled: boolean = true;
+    public componentBits: BitSet;
 
     /**
      * 启用/禁用实体。 当从物理系统中删除禁用的对撞机时，将不会调用组件方法

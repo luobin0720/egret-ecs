@@ -37,6 +37,42 @@ class Transform{
         this.setParent(value);
     }
 
+    public get rotation(){
+        this.updateTransform();
+        return this._rotation;
+    }
+
+    public set rotation(value: number){
+        this.setRotation(value);
+    }
+
+    public get localRotation(){
+        this.updateTransform();
+        return this._localRotation;
+    }
+
+    public set localRotation(value: number){
+        this.setLocalRotation(value);
+    }
+
+    public setRotation(radians: number): Transform{
+        this._rotation = radians;
+        if (this.parent != null)
+            this.localRotation = this.parent.rotation + radians;
+        else
+            this.localRotation = radians;
+
+        return this;
+    }
+
+    public setLocalRotation(radians: number): Transform{
+        this._localRotation = radians;
+        this._localDirty = this._positionDirty = this._localPositionDirty = this._localRotationDirty = this._localScaleDirty = true;
+        this.setDirty(DirtyType.RotationDirty);
+
+        return this;
+    }
+
     public get position(): Vector2{
         this.updateTransform();
         if (this._positionDirty){
