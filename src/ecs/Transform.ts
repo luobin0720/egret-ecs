@@ -29,6 +29,11 @@ class Transform{
 
     private _worldTransform: Matrix2D = Matrix2D.identity();
     private _worldToLocalTransform = Matrix2D.identity();
+
+    public get childCount(): number{
+        return this._children.length;
+    }
+
     public get parent(): Transform{
         return this._parent;
     }
@@ -238,6 +243,10 @@ class Transform{
                 this._children[i].setDirty(dirtyFlagType);
             }
         }
+    }
+
+    public getChild(index: number): Transform{
+        return this._children[index];
     }
 }
 

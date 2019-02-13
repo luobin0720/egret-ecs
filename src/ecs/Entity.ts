@@ -48,6 +48,10 @@ class Entity{
         this.setEnabled(value);
     }
 
+    constructor(name: string){
+        this.name = name;
+    }
+
     public setEnabled(isEnabled: boolean): Entity{
         if (this._enabled != isEnabled){
             this._enabled = isEnabled;
