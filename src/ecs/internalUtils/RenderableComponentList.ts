@@ -56,4 +56,20 @@ class RenderableComponentList{
             this.addToRenderLayerList(component, newRenderLayer);
         }
     }
+
+    public updateLists(){
+        // TODO: sortList
+
+        if (this._unsortedRenderLayer.length > 0){
+            for (let i = 0, count = this._unsortedRenderLayer.length; i < count; i++) {
+                let renderLayerComponents: Array<IRenderable>;
+                if (this._componentsByRenderLayer[this._unsortedRenderLayer[i]] != null){
+                    renderLayerComponents = this._componentsByRenderLayer[this._unsortedRenderLayer[i]];
+                    renderLayerComponents.sort();   // TODO: icompareable
+                }
+            }
+
+            this._unsortedRenderLayer.splice(0);
+        }
+    }
 }

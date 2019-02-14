@@ -41,4 +41,19 @@ class EntitySystem{
     public onAdded(entity: Entity){}
 
     public onRemoved(entity: Entity){}
+
+    protected begin(){}
+
+    protected process(entities: Array<Entity>){}
+    protected lastProcess(entities: Array<Entity>){}
+    protected end(){}
+    public update(){
+        this.begin();
+        this.process(this._entities);
+    }
+
+    public lastUpdate(){
+        this.lastProcess(this._entities);
+        this.end();
+    }
 }

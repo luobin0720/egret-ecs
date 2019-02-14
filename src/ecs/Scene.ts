@@ -15,6 +15,7 @@ class Scene{
      */
     public readonly renderableComponents: RenderableComponentList;
     public readonly entities: EntityList;
+    public readonly entityProcessors: EntityProcessorList;
 
     public createEntity(name: string, position: Vector2 = null): Entity{
         let entity = new Entity(name);
@@ -37,5 +38,19 @@ class Scene{
 
     public findEntity(name: string): Entity{
         return this.entities.findEntity(name);
+    }
+
+    public update(){
+        this.entities.updateLists();
+
+        if (this.entityProcessors != null)
+            this.entityProcessors.update();
+
+        this.entities.update();
+
+        if (this.entityProcessors != null)
+            this.entityProcessors.lastUpdate();
+
+        this.renderableComponents.updateLists();
     }
 }

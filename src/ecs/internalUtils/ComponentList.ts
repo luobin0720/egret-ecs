@@ -148,4 +148,8 @@ class ComponentList{
             this._components[i].onDisabled();
         }
     }
+
+    public update(){
+        //TODO: updateList
+    }
 }

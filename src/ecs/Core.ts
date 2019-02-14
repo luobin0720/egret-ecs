@@ -28,6 +28,8 @@ class Core extends eui.UILayer{
         egret.lifecycle.onResume = () => {
             this.onResume();
         }
+
+        this.addEventListener(egret.Event.ENTER_FRAME,this.onUpdate,this);
     }
 
     /**
@@ -54,5 +56,9 @@ class Core extends eui.UILayer{
     protected onPause(){
         if (Core.pauseOnFocusLost)
             egret.ticker.pause();
+    }
+
+    protected onUpdate(){
+        this._scene.update();
     }
 }
